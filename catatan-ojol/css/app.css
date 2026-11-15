@@ -1,0 +1,106 @@
+/*
+ * Token tema + beberapa gaya yang tidak cocok ditulis sebagai utility Tailwind.
+ * Nilai warna berupa "R G B" agar bisa dipakai dengan modifier opacity (bg-brand/70).
+ */
+
+:root,
+:root[data-theme='light'] {
+  --bg: 245 243 236;
+  --surface: 255 255 255;
+  --ink: 22 35 29;
+  --muted: 91 107 99;
+  --line: 227 224 213;
+  --edge: 201 196 181;
+  --track: 236 232 220;
+  --brand: 15 94 67;
+  --brand-soft: 221 239 230;
+  --on-brand: 255 255 255;
+  --expense: 168 57 26;
+  --expense-soft: 248 228 220;
+  --on-expense: 255 255 255;
+  --hero: 22 35 29;
+  --hero-soft: 34 52 43;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: 14 21 18;
+  --surface: 23 33 28;
+  --ink: 234 241 236;
+  --muted: 157 174 164;
+  --line: 38 51 41;
+  --edge: 70 88 77;
+  --track: 38 51 41;
+  --brand: 74 201 148;
+  --brand-soft: 28 56 44;
+  --on-brand: 7 20 14;
+  --expense: 255 138 101;
+  --expense-soft: 58 32 25;
+  --on-expense: 33 10 4;
+  --hero: 31 45 38;
+  --hero-soft: 43 61 51;
+  color-scheme: dark;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--brand));
+  outline-offset: 2px;
+}
+
+/* Padding bawah yang menghormati area aman (notch / gesture bar) */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.animate-toast {
+  animation: toast-masuk 0.2s ease-out;
+}
+
+.animate-sheet {
+  animation: sheet-naik 0.22s ease-out;
+}
+
+@keyframes toast-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sheet-naik {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

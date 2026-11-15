@@ -1,0 +1,14 @@
+{
+  "name": "catatan-ojol",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PWA pembukuan untuk driver ojek online",
+  "scripts": {
+    "dev": "npx serve . -l 5173",
+    "css:build": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
+    "css:watch": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

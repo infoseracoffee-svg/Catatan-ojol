@@ -1,0 +1,4 @@
+/* Sumber untuk build produksi: npm run css:build  ->  css/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

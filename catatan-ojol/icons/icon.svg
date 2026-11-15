@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Catatan Ojol">
+  <rect width="512" height="512" rx="112" fill="#0F5E43"/>
+  <g transform="translate(256 256) scale(14) translate(-12 -12)" fill="none" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6" cy="17" r="3"/>
+    <circle cx="18" cy="17" r="3"/>
+    <path d="M6 17l3-7h5l4 7"/>
+    <path d="M9 10H7M14 10l1.5-3H18"/>
+  </g>
+  <circle cx="392" cy="120" r="30" fill="#F4B81F"/>
+</svg>

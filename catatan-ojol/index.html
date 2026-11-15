@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catatan Ojol</title>
+<meta name="description" content="Pembukuan harian untuk driver ojek online: catat pemasukan, pengeluaran, dan lihat laba bersih.">
+<meta name="theme-color" content="#F5F3EC">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Catatan Ojol">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<!-- Terapkan tema lebih awal supaya tidak berkedip saat halaman dimuat -->
+<script>
+try {
+  var d = JSON.parse(localStorage.getItem('catatan-ojol:v1') || '{}');
+  var t = (d.pengaturan || {}).tema || 'terang';
+  var gelap = t === 'gelap' || (t === 'otomatis' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.dataset.theme = gelap ? 'dark' : 'light';
+} catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!--
+  TAILWIND
+  Mode development: Play CDN (dua baris di bawah). Tidak perlu build.
+  Mode produksi: jalankan `npm run css:build`, hapus dua baris CDN ini, lalu aktifkan:
+  <link rel="stylesheet" href="css/tailwind.css">
+-->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind.config.js"></script>
+
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="bg-bg font-sans text-ink antialiased">
+<div id="app" class="mx-auto flex min-h-dvh w-full max-w-md flex-col"></div>
+<div id="sheet-root"></div>
+<div id="toast-root" class="pointer-events-none fixed inset-x-0 bottom-28 z-[60] flex flex-col items-center gap-2 px-5" aria-live="polite"></div>
+<noscript><p class="p-6 text-center">Catatan Ojol membutuhkan JavaScript.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
